@@ -13,7 +13,7 @@ public class PlayerBalancedState : PlayerBaseState
     }
     public override void Execute(float deltaTime)
     {
-        if (stateMachine.IsUnbalanced)
+        if (stateMachine.IsUnbalanced.Count > 0)
         {
             stateMachine.ChangeState(new PlayerUnbalancedState(stateMachine));
         }
