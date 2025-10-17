@@ -1,18 +1,25 @@
+using NUnit.Framework;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStateMachine : StateMachine
 {
     [field: SerializeField] public float BalancedSpeed { get; private set; }
     [field: SerializeField] public float UnbalancedSpeed { get; private set; }
+    [field: SerializeField] public int MinNoise {  get; private set; }
+    [field: SerializeField] public int MaxNoise { get; private set; }   
     public InputReader InputReader { get; private set; }
     public Animator Animator { get; private set; }
     public CharacterController Controller { get; private set; }
-    public bool IsUnbalanced { get; private set; }
+    public ForceReceiver ForceReceiver { get; private set; }
+    public List<GameObject> IsUnbalanced { get; private set; } = new List<GameObject>();
     private void Awake()
     {
         Animator = GetComponent<Animator>();
         InputReader = GetComponent<InputReader>();
         Controller = GetComponent<CharacterController>();
+        ForceReceiver = GetComponent<ForceReceiver>();
         ChangeState(new PlayerBalancedState(this));
     }
     public Vector3 CalculateMovement(float deltaTime)
@@ -49,11 +56,11 @@ public class PlayerStateMachine : StateMachine
     private void OnTriggerEnter(UnityEngine.Collider other)
     {
         if (other.CompareTag("Unbalanced"))
-            IsUnbalanced = true;
+            IsUnbalanced.Add(other.gameObject);
     }
     private void OnTriggerExit(UnityEngine.Collider other)
     {
         if (other.CompareTag("Unbalanced"))
-            IsUnbalanced = false;
+            IsUnbalanced.Remove(other.gameObject);
     }
 }
