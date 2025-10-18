@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +12,6 @@ public class SceneEditor : MonoBehaviour
     }
     public void LoadScene(int sceneId)
     {
-        Debug.Log("AMK");
         if (availableScene >= sceneId)
             SceneManager.LoadScene(sceneId);
     }

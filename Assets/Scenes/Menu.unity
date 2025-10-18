@@ -734,6 +734,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1200738936564979413, guid: d15841188af2cb045bb3b905bcb33492, type: 3}
+      propertyPath: <RawImages>k__BackingField.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1967723296913932558, guid: d15841188af2cb045bb3b905bcb33492, type: 3}
       propertyPath: m_LocalPosition.x
       value: 977.97986
