@@ -40,7 +40,7 @@ public class PlayerUnbalancedState : PlayerBaseState
             scrollbar.value = 0.5f - deg / 100;
         }
  
-        if (deg > 45f)
+        if (deg > 45f || stateMachine.IsHit)
         {
             stateMachine.ChangeState(new PlayerFallState(stateMachine));
             return;

@@ -25,6 +25,7 @@ public class PlayerStateMachine : StateMachine
     public Transform MainCameraTransform { get; private set; }
     public bool IsGameOver { get; private set; }
     public bool IsLevelPass { get; private set; }
+    public bool IsHit {  get; private set; }
     private void Awake()
     {
         Animator = GetComponent<Animator>();
@@ -82,6 +83,8 @@ public class PlayerStateMachine : StateMachine
             IsGameOver = true;
         if (other.CompareTag("LevelPass"))
             IsLevelPass = true;
+        if (other.CompareTag("Pendulum"))
+            IsHit = true;
     }
     private void OnTriggerExit(UnityEngine.Collider other)
     {

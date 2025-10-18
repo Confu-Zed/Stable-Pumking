@@ -20,7 +20,10 @@ public class PlayerBalancedState : PlayerBaseState
         }
 
         if (stateMachine.IsGameOver)
+        {
+            stateMachine.GameOver.SetActive(true);
             stateMachine.ChangeState(new PlayerFallState(stateMachine));
+        }
 
         if (stateMachine.IsLevelPass)
             stateMachine.ChangeState(new PlayerLevelPassState(stateMachine));
