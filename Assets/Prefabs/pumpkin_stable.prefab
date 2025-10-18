@@ -113,6 +113,10 @@ MonoBehaviour:
   <RotationDamping>k__BackingField: 4
   <JumpForce>k__BackingField: 5
   <TiltPower>k__BackingField: 5
+  <GameOver>k__BackingField: {fileID: 0}
+  <LayerMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &4392797482655839882
 MonoBehaviour:
   m_ObjectHideFlags: 0

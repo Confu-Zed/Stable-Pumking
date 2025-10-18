@@ -19,8 +19,11 @@ public class PlayerBalancedState : PlayerBaseState
             stateMachine.ChangeState(new PlayerUnbalancedState(stateMachine));
         }
 
-        if (stateMachine.GameOver)
+        if (stateMachine.IsGameOver)
             stateMachine.ChangeState(new PlayerFallState(stateMachine));
+
+        if (stateMachine.IsLevelPass)
+            stateMachine.ChangeState(new PlayerLevelPassState(stateMachine));
 
         Vector3 movement = stateMachine.CalculateMovement(deltaTime);
         Move(movement * stateMachine.BalancedSpeed, deltaTime);
