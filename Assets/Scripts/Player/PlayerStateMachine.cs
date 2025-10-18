@@ -19,6 +19,7 @@ public class PlayerStateMachine : StateMachine
     public ForceReceiver ForceReceiver { get; private set; }
     public List<GameObject> IsUnbalanced { get; private set; } = new List<GameObject>();
     public Transform MainCameraTransform { get; private set; }
+    public bool IsGameOver { get; private set; }
     private void Awake()
     {
         Animator = GetComponent<Animator>();
@@ -26,7 +27,7 @@ public class PlayerStateMachine : StateMachine
         Controller = GetComponent<CharacterController>();
         ForceReceiver = GetComponent<ForceReceiver>();
         MainCameraTransform = Camera.main.transform;
-        GameOver = GameObject.Find("Gameover");
+        GameOver = GameObject.Find("GameOver");
 
         ChangeState(new PlayerBalancedState(this));
     }
@@ -73,8 +74,8 @@ public class PlayerStateMachine : StateMachine
     {
         if (other.CompareTag("Unbalanced"))
             IsUnbalanced.Add(other.gameObject);
-        //if (other.CompareTag("Ground"))
-        //    //GameOver = true;
+        if (other.CompareTag("Ground"))
+            IsGameOver = true;
     }
     private void OnTriggerExit(UnityEngine.Collider other)
     {
