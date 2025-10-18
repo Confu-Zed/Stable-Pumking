@@ -14,6 +14,8 @@ public class PlayerUnbalancedState : PlayerBaseState
     Scrollbar scrollbar;
     public override void Enter()
     {
+        stateMachine.UnbalancedText?.SetActive(true);
+
         stateMachine.Animator.CrossFadeInFixedTime(LocomotionBlendTreeHash, CrossFadeDuration);
 
         stateMachine.InputReader.JumpEvent += stateMachine.OnJump;
@@ -55,6 +57,8 @@ public class PlayerUnbalancedState : PlayerBaseState
     }
     public override void Exit()
     {
+        stateMachine.UnbalancedText?.SetActive(false);  
+
         stateMachine.InputReader.JumpEvent -= stateMachine.OnJump;
 
         stateMachine.TiltBar.SetActive(false);

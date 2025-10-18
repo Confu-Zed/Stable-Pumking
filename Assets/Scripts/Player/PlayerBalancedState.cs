@@ -8,6 +8,8 @@ public class PlayerBalancedState : PlayerBaseState
     const float CrossFadeDuration = .1f; 
     public override void Enter()
     {
+        stateMachine.BalancedText?.SetActive(true);
+
         stateMachine.Animator.CrossFadeInFixedTime(LocomotionBlendTreeHash, CrossFadeDuration);
 
         stateMachine.InputReader.JumpEvent += stateMachine.OnJump;
@@ -37,6 +39,8 @@ public class PlayerBalancedState : PlayerBaseState
     }
     public override void Exit()
     {
+        stateMachine.BalancedText?.SetActive(false);
+
         stateMachine.InputReader.JumpEvent -= stateMachine.OnJump;
     }
 }

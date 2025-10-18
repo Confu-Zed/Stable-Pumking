@@ -17,6 +17,8 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public GameObject LevelPass { get; private set; }
     [field: SerializeField] public LayerMask LayerMask { get; private set; }
     [field: SerializeField] public GameObject TiltBar { get; private set; }
+    [field: SerializeField] public GameObject BalancedText { get; private set; }
+    [field: SerializeField] public GameObject UnbalancedText { get; private set; }
     public InputReader InputReader { get; private set; }
     public Animator Animator { get; private set; }
     public CharacterController Controller { get; private set; }
