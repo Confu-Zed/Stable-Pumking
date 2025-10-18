@@ -13,6 +13,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float JumpForce { get; private set; }
     [field: SerializeField] public float TiltPower { get; private set; }
     [field: SerializeField] public GameObject GameOver { get; private set; }
+    [field: SerializeField] public GameObject LevelPass { get; private set; }
     [field: SerializeField] public LayerMask LayerMask { get; private set; }
     public InputReader InputReader { get; private set; }
     public Animator Animator { get; private set; }
@@ -21,6 +22,7 @@ public class PlayerStateMachine : StateMachine
     public List<GameObject> IsUnbalanced { get; private set; } = new List<GameObject>();
     public Transform MainCameraTransform { get; private set; }
     public bool IsGameOver { get; private set; }
+    public bool IsLevelPass { get; private set; }
     private void Awake()
     {
         Animator = GetComponent<Animator>();
@@ -76,6 +78,8 @@ public class PlayerStateMachine : StateMachine
             IsUnbalanced.Add(other.gameObject);
         if (other.CompareTag("Ground"))
             IsGameOver = true;
+        if (other.CompareTag("LevelPass"))
+            IsLevelPass = true;
     }
     private void OnTriggerExit(UnityEngine.Collider other)
     {
