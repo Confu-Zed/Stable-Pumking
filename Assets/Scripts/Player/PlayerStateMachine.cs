@@ -10,6 +10,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public int MinNoise {  get; private set; }
     [field: SerializeField] public int MaxNoise { get; private set; }
     [field: SerializeField] public float RotationDamping { get; private set; }
+    [field: SerializeField] public float JumpForce { get; private set; }
     public InputReader InputReader { get; private set; }
     public Animator Animator { get; private set; }
     public CharacterController Controller { get; private set; }

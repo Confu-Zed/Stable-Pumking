@@ -111,6 +111,7 @@ MonoBehaviour:
   <MinNoise>k__BackingField: 1
   <MaxNoise>k__BackingField: 6
   <RotationDamping>k__BackingField: 4
+  <JumpForce>k__BackingField: 5
 --- !u!114 &4392797482655839882
 MonoBehaviour:
   m_ObjectHideFlags: 0
