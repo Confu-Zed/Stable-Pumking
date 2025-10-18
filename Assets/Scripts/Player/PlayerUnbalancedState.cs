@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerUnbalancedState : PlayerBaseState
 {
@@ -10,11 +11,16 @@ public class PlayerUnbalancedState : PlayerBaseState
     float time = 0f;
     int noiseDuration = Random.Range(1, 5);
     float deg;
+    Scrollbar scrollbar;
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(LocomotionBlendTreeHash, CrossFadeDuration);
 
         stateMachine.InputReader.JumpEvent += stateMachine.OnJump;
+
+        stateMachine.TiltBar.SetActive(true);
+        scrollbar = stateMachine.TiltBar.GetComponent<Scrollbar>();
+        scrollbar.value = 0.5f;
     }
     public override void Execute(float deltaTime)
     {
@@ -24,10 +30,16 @@ public class PlayerUnbalancedState : PlayerBaseState
         }
 
         if (stateMachine.transform.rotation.eulerAngles.x > 90)
+        {
             deg = 360 - stateMachine.transform.rotation.eulerAngles.x;
+            scrollbar.value = 0.5f + deg / 100;
+        }
         else
+        {
             deg = stateMachine.transform.rotation.eulerAngles.x;
-
+            scrollbar.value = 0.5f - deg / 100;
+        }
+ 
         if (deg > 45f)
         {
             stateMachine.ChangeState(new PlayerFallState(stateMachine));
@@ -44,6 +56,8 @@ public class PlayerUnbalancedState : PlayerBaseState
     public override void Exit()
     {
         stateMachine.InputReader.JumpEvent -= stateMachine.OnJump;
+
+        stateMachine.TiltBar.SetActive(false);
     }
     public void Noise(float deltaTime)
     {

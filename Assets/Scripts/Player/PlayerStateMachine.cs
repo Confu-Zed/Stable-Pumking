@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStateMachine : StateMachine
 {
@@ -15,6 +16,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public GameObject GameOver { get; private set; }
     [field: SerializeField] public GameObject LevelPass { get; private set; }
     [field: SerializeField] public LayerMask LayerMask { get; private set; }
+    [field: SerializeField] public GameObject TiltBar { get; private set; }
     public InputReader InputReader { get; private set; }
     public Animator Animator { get; private set; }
     public CharacterController Controller { get; private set; }
@@ -49,7 +51,7 @@ public class PlayerStateMachine : StateMachine
     public Vector3 CalculateTilt()
     {
         Vector3 playerInput = new Vector3(0, InputReader.TiltValue.y, 0);
-        return playerInput * TiltPower;
+        return - playerInput * TiltPower;
     }
     public void FaceMovementDirection(Vector3 direction, float deltaTime)
     {
