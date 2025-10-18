@@ -9,6 +9,7 @@ public class PlayerUnbalancedState : PlayerBaseState
     int noiseDirection = 1;
     float time = 0f;
     int noiseDuration = Random.Range(1, 5);
+    float deg;
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(LocomotionBlendTreeHash, CrossFadeDuration);
@@ -22,12 +23,20 @@ public class PlayerUnbalancedState : PlayerBaseState
             stateMachine.ChangeState(new PlayerBalancedState(stateMachine));
         }
 
-        if (stateMachine.GameOver)
+        if (stateMachine.transform.rotation.eulerAngles.x > 90)
+            deg = 360 - stateMachine.transform.rotation.eulerAngles.x;
+        else
+            deg = stateMachine.transform.rotation.eulerAngles.x;
+
+        if (deg > 45f)
+        {
             stateMachine.ChangeState(new PlayerFallState(stateMachine));
+        }
 
         Vector3 movement = stateMachine.CalculateMovement(deltaTime);
         Move(movement * stateMachine.UnbalancedSpeed, deltaTime);
-        stateMachine.Controller.Move(Noise() * deltaTime);
+
+        Noise(deltaTime);
 
         stateMachine.UpdateAnimator(deltaTime, LocomotionForwardHash, CrossFadeDuration);
     }
@@ -35,12 +44,13 @@ public class PlayerUnbalancedState : PlayerBaseState
     {
         stateMachine.InputReader.JumpEvent -= stateMachine.OnJump;
     }
-    public Vector3 Noise()
+    public void Noise(float deltaTime)
     {
         time += Time.deltaTime;
 
-        Vector3 movement = new Vector3();
+        Quaternion tilt = Quaternion.identity;
         int noiseAmount = Random.Range(stateMachine.MinNoise, stateMachine.MaxNoise);
+        Vector3 tiltDirection = new Vector3(0, noiseDirection * noiseAmount, 0);
 
         if (time > noiseDuration)
         {
@@ -49,8 +59,23 @@ public class PlayerUnbalancedState : PlayerBaseState
             noiseDuration = Random.Range(1, 5);
         }
 
-        movement += Vector3.right * noiseAmount * .3f * noiseDirection;
+        stateMachine.transform.rotation = Quaternion.Lerp(stateMachine.transform.rotation,
+            Quaternion.LookRotation(tiltDirection + stateMachine.CalculateTilt()), deltaTime);
 
-        return movement;
+        //time += Time.deltaTime;
+
+        //Vector3 movement = new Vector3();
+        //int noiseAmount = Random.Range(stateMachine.MinNoise, stateMachine.MaxNoise);
+
+        //if (time > noiseDuration)
+        //{
+        //    noiseDirection = -noiseDirection;
+        //    time = 0f;
+        //    noiseDuration = Random.Range(1, 5);
+        //}
+
+        //movement += Vector3.right * noiseAmount * .3f * noiseDirection;
+
+        //return movement;
     }
 }

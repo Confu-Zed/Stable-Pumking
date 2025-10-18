@@ -185,8 +185,8 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "8456",
-                    "id": "6e69dc6a-ede2-4597-af0f-5c0944b58a1b",
+                    "name": "2D Vector",
+                    "id": "a93bd537-cb8c-4b83-8bc0-acdfd8abc98c",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -197,8 +197,8 @@
                 },
                 {
                     "name": "up",
-                    "id": "53bb5171-06aa-4f36-a7a1-ca5ec59be54b",
-                    "path": "<Keyboard>/8",
+                    "id": "27c7fcb2-0b52-4b5f-9c0e-65aa800f9cb9",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -208,8 +208,8 @@
                 },
                 {
                     "name": "down",
-                    "id": "b5218f39-f52f-4e45-8c7d-8cbd2e964cfb",
-                    "path": "<Keyboard>/5",
+                    "id": "98d87ff1-63b2-4e99-a7f9-9a1acb23da03",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -219,36 +219,25 @@
                 },
                 {
                     "name": "left",
-                    "id": "4d8da6ea-e0c2-4621-9bc7-5545407592d3",
-                    "path": "<Keyboard>/4",
+                    "id": "f96f7c25-4191-46cc-ab38-ed62975df7b5",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
+                    "groups": "",
                     "action": "Balance",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "6dcc9525-55cc-4e5e-8f0f-d0e5535f7151",
-                    "path": "<Keyboard>/6",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Balance",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "38da1545-ba0e-4c22-914f-e60a33c5a9a2",
-                    "path": "<Gamepad>/rightStick",
+                    "id": "c2488d09-1f09-47ad-90f0-5ec176bdbc81",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Balance",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 }
             ]
         },

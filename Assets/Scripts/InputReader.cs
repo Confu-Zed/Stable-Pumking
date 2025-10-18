@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class InputReader : MonoBehaviour, Control.IPlayerActions
 {
     public Vector2 MovementValue {  get; private set; }
+    public Vector2 TiltValue { get; private set; }
     public event Action JumpEvent;
     public bool IsAttacking { get; private set; } = false;
     Control control;
@@ -25,7 +26,7 @@ public class InputReader : MonoBehaviour, Control.IPlayerActions
     }
     public void OnBalance(InputAction.CallbackContext context)
     {
-        
+        TiltValue = context.ReadValue<Vector2>();
     }
     public void OnLook(InputAction.CallbackContext context)
     {
