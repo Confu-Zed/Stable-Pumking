@@ -4,27 +4,33 @@ public class PlayerBalancedState : PlayerBaseState
 {
     public PlayerBalancedState(PlayerStateMachine stateMachine) : base(stateMachine) { }
     readonly int LocomotionBlendTreeHash = Animator.StringToHash("Locomotion");
-    readonly int LocomotionForwardHash = Animator.StringToHash("Forward");
-    readonly int LocomotionRightHash = Animator.StringToHash("Right");
+    readonly int LocomotionForwardHash = Animator.StringToHash("ForwardBalanced");
     const float CrossFadeDuration = .1f; 
     public override void Enter()
     {
         stateMachine.Animator.CrossFadeInFixedTime(LocomotionBlendTreeHash, CrossFadeDuration);
+
+        stateMachine.InputReader.JumpEvent += stateMachine.OnJump;
     }
     public override void Execute(float deltaTime)
     {
-        if (stateMachine.IsUnbalanced.Count > 0)
+        if (stateMachine.IsUnbalanced.Count != 0)
         {
             stateMachine.ChangeState(new PlayerUnbalancedState(stateMachine));
         }
 
+        if (stateMachine.GameOver)
+            stateMachine.ChangeState(new PlayerFallState(stateMachine));
+
         Vector3 movement = stateMachine.CalculateMovement(deltaTime);
         Move(movement * stateMachine.BalancedSpeed, deltaTime);
 
-        stateMachine.UpdateAnimator(deltaTime, LocomotionRightHash, LocomotionForwardHash, CrossFadeDuration);
+        stateMachine.FaceMovementDirection(movement, deltaTime);
+
+        stateMachine.UpdateAnimator(deltaTime, LocomotionForwardHash, CrossFadeDuration);
     }
     public override void Exit()
     {
-        
+        stateMachine.InputReader.JumpEvent -= stateMachine.OnJump;
     }
 }

@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0a2c7ab7382140043bee56004ddc8624, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1481122
+      value: 1.1311802
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0a2c7ab7382140043bee56004ddc8624, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5999999
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0a2c7ab7382140043bee56004ddc8624, type: 3}
       propertyPath: m_LocalPosition.z
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0a2c7ab7382140043bee56004ddc8624, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.000000204123
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0a2c7ab7382140043bee56004ddc8624, type: 3}
       propertyPath: m_LocalRotation.z
@@ -85,6 +85,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a2c7ab7382140043bee56004ddc8624, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1179439376233779895}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a2c7ab7382140043bee56004ddc8624, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4152467141295570949}
   m_SourcePrefab: {fileID: 100100000, guid: 0a2c7ab7382140043bee56004ddc8624, type: 3}
 --- !u!1 &5396964059749764086 stripped
 GameObject:
@@ -104,9 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <BalancedSpeed>k__BackingField: 2
-  <UnbalancedSpeed>k__BackingField: 0.9
+  <UnbalancedSpeed>k__BackingField: 1.4
   <MinNoise>k__BackingField: 1
-  <MaxNoise>k__BackingField: 4
+  <MaxNoise>k__BackingField: 6
+  <RotationDamping>k__BackingField: 4
 --- !u!114 &4392797482655839882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,3 +136,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drag: 0.3
+--- !u!143 &4152467141295570949
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396964059749764086}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2.9
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.05
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1.6, z: 0}
