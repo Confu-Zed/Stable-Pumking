@@ -12,12 +12,12 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float RotationDamping { get; private set; }
     [field: SerializeField] public float JumpForce { get; private set; }
     [field: SerializeField] public float TiltPower { get; private set; }
+    public GameObject GameOver { get; private set; }
     public InputReader InputReader { get; private set; }
     public Animator Animator { get; private set; }
     public CharacterController Controller { get; private set; }
     public ForceReceiver ForceReceiver { get; private set; }
     public List<GameObject> IsUnbalanced { get; private set; } = new List<GameObject>();
-    public bool GameOver { get; private set; }
     public Transform MainCameraTransform { get; private set; }
     private void Awake()
     {
@@ -26,6 +26,8 @@ public class PlayerStateMachine : StateMachine
         Controller = GetComponent<CharacterController>();
         ForceReceiver = GetComponent<ForceReceiver>();
         MainCameraTransform = Camera.main.transform;
+        GameOver = GameObject.Find("Gameover");
+
         ChangeState(new PlayerBalancedState(this));
     }
     public Vector3 CalculateMovement(float deltaTime)
@@ -71,8 +73,8 @@ public class PlayerStateMachine : StateMachine
     {
         if (other.CompareTag("Unbalanced"))
             IsUnbalanced.Add(other.gameObject);
-        if (other.CompareTag("Ground"))
-            GameOver = true;
+        //if (other.CompareTag("Ground"))
+        //    //GameOver = true;
     }
     private void OnTriggerExit(UnityEngine.Collider other)
     {
