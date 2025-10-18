@@ -19,4 +19,8 @@ public class SceneEditor : MonoBehaviour
     {
         availableScene++;
     }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
