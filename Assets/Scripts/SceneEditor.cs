@@ -10,6 +10,7 @@ public class SceneEditor : MonoBehaviour
     }
     public void LoadScene(int sceneId)
     {
+        Debug.Log("AMK");
         if (availableScene >= sceneId)
             SceneManager.LoadScene(sceneId);
     }
