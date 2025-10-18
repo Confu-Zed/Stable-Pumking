@@ -5,6 +5,8 @@ public class PlayerFallState : PlayerBaseState
     public PlayerFallState(PlayerStateMachine stateMachine) : base(stateMachine) { }
     public override void Enter()
     {
+        stateMachine.Audio.resource = stateMachine.Fall;
+        stateMachine.Audio.Play();
         stateMachine.Controller.excludeLayers = stateMachine.LayerMask;
     }
     public override void Execute(float deltaTime)
