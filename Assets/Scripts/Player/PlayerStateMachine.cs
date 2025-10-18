@@ -12,7 +12,8 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float RotationDamping { get; private set; }
     [field: SerializeField] public float JumpForce { get; private set; }
     [field: SerializeField] public float TiltPower { get; private set; }
-    public GameObject GameOver { get; private set; }
+    [field: SerializeField] public GameObject GameOver { get; private set; }
+    [field: SerializeField] public LayerMask LayerMask { get; private set; }
     public InputReader InputReader { get; private set; }
     public Animator Animator { get; private set; }
     public CharacterController Controller { get; private set; }
@@ -27,7 +28,6 @@ public class PlayerStateMachine : StateMachine
         Controller = GetComponent<CharacterController>();
         ForceReceiver = GetComponent<ForceReceiver>();
         MainCameraTransform = Camera.main.transform;
-        GameOver = GameObject.Find("GameOver");
 
         ChangeState(new PlayerBalancedState(this));
     }

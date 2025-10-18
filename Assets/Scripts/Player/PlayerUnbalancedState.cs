@@ -31,6 +31,7 @@ public class PlayerUnbalancedState : PlayerBaseState
         if (deg > 45f)
         {
             stateMachine.ChangeState(new PlayerFallState(stateMachine));
+            return;
         }
 
         Vector3 movement = stateMachine.CalculateMovement(deltaTime);

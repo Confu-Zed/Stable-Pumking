@@ -19,7 +19,7 @@ public class PlayerBalancedState : PlayerBaseState
             stateMachine.ChangeState(new PlayerUnbalancedState(stateMachine));
         }
 
-        if (stateMachine.GameOver)
+        if (stateMachine.IsGameOver)
             stateMachine.ChangeState(new PlayerFallState(stateMachine));
 
         Vector3 movement = stateMachine.CalculateMovement(deltaTime);
