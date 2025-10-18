@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/bgm.unity
     guid: 149aff565dd44e14c9f469f9566a45a3
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/bgm2.unity
+    guid: 5197f14ad7d0b404491efd3513a4faca
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
