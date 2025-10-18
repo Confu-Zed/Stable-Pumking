@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2502398611399937886, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2570079440233422679, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -286,6 +290,10 @@ PrefabInstance:
     - target: {fileID: 7505868407433301831, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505868407433301831, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
+      propertyPath: m_TagString
+      value: Pendulum
       objectReference: {fileID: 0}
     - target: {fileID: 8570238143895892419, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
@@ -402,6 +410,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2502398611399937886, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2570079440233422679, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -513,6 +525,10 @@ PrefabInstance:
     - target: {fileID: 7505868407433301831, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505868407433301831, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
+      propertyPath: m_TagString
+      value: Pendulum
       objectReference: {fileID: 0}
     - target: {fileID: 8570238143895892419, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
@@ -985,6 +1001,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2502398611399937886, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2570079440233422679, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1096,6 +1116,10 @@ PrefabInstance:
     - target: {fileID: 7505868407433301831, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505868407433301831, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
+      propertyPath: m_TagString
+      value: Pendulum
       objectReference: {fileID: 0}
     - target: {fileID: 8570238143895892419, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
@@ -2165,6 +2189,10 @@ PrefabInstance:
       propertyPath: <LevelPass>k__BackingField
       value: 
       objectReference: {fileID: 1546813202}
+    - target: {fileID: 6819498838971361473, guid: a1e50ac35fc83914fb898605e151e422, type: 3}
+      propertyPath: <LayerMask>k__BackingField.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2705,6 +2733,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2502398611399937886, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2570079440233422679, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -2816,6 +2848,10 @@ PrefabInstance:
     - target: {fileID: 7505868407433301831, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505868407433301831, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
+      propertyPath: m_TagString
+      value: Pendulum
       objectReference: {fileID: 0}
     - target: {fileID: 8570238143895892419, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
@@ -3705,6 +3741,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2502398611399937886, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2570079440233422679, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -3816,6 +3856,10 @@ PrefabInstance:
     - target: {fileID: 7505868407433301831, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505868407433301831, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
+      propertyPath: m_TagString
+      value: Pendulum
       objectReference: {fileID: 0}
     - target: {fileID: 8570238143895892419, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
@@ -3992,6 +4036,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2502398611399937886, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2570079440233422679, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -4107,6 +4155,10 @@ PrefabInstance:
     - target: {fileID: 7505868407433301831, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505868407433301831, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
+      propertyPath: m_TagString
+      value: Pendulum
       objectReference: {fileID: 0}
     - target: {fileID: 8570238143895892419, guid: ce0d3976d2204334e9f67d93f053d7a9, type: 3}
       propertyPath: m_Layer

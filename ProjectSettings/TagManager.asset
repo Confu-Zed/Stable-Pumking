@@ -7,6 +7,7 @@ TagManager:
   - Unbalanced
   - Ground
   - LevelPass
+  - Pendulum
   layers:
   - Default
   - TransparentFX
