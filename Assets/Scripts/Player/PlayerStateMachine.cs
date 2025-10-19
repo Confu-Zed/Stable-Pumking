@@ -21,7 +21,6 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public GameObject UnbalancedText { get; private set; }
     [field: SerializeField] public AudioClip Fall { get; private set; }
     [field: SerializeField] public AudioClip Success { get; private set; }
-    [field: SerializeField] public AudioClip Hit { get; private set; }
     public AudioSource Audio { get; private set; }
     public InputReader InputReader { get; private set; }
     public Animator Animator { get; private set; }

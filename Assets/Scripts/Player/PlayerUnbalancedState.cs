@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -44,9 +46,6 @@ public class PlayerUnbalancedState : PlayerBaseState
  
         if (deg > 45f || stateMachine.IsHit)
         {
-            stateMachine.Audio.resource = stateMachine.Hit;
-            stateMachine.Audio.Play();
-
             stateMachine.ChangeState(new PlayerFallState(stateMachine));
             return;
         }
