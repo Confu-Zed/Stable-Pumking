@@ -1467,8 +1467,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.3474464, y: 1.6378098, z: 2.247631}
-  m_Center: {x: -0.76425743, y: -0.025120974, z: 0.43546867}
+  m_Size: {x: 6.426449, y: 2.517431, z: 2.6815758}
+  m_Center: {x: -0.22475624, y: 0.41468966, z: 0.652441}
 --- !u!4 &870053078
 Transform:
   m_ObjectHideFlags: 0
@@ -1478,7 +1478,7 @@ Transform:
   m_GameObject: {fileID: 870053076}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.52, y: 0.24, z: 50.35}
+  m_LocalPosition: {x: 37.87, y: 0.24, z: 50.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2542,6 +2542,10 @@ PrefabInstance:
     - target: {fileID: 2668783078024579404, guid: df9d3a724209f5946aa73accb4fc07fd, type: 3}
       propertyPath: m_Name
       value: Book_Evil_Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010662673897993241, guid: df9d3a724209f5946aa73accb4fc07fd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3333434195460150262, guid: df9d3a724209f5946aa73accb4fc07fd, type: 3}
       propertyPath: m_LocalScale.x
