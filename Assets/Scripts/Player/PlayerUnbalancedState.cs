@@ -13,10 +13,17 @@ public class PlayerUnbalancedState : PlayerBaseState
     float time = 0f;
     int noiseDuration = Random.Range(1, 5);
     float deg;
+    bool freeze = true;
     Scrollbar scrollbar;
     public override void Enter()
     {
         stateMachine.UnbalancedText?.SetActive(true);
+
+        if (stateMachine.UnbalancedText && freeze)
+        {
+            Time.timeScale = 0;
+            freeze = false;
+        }
 
         stateMachine.Animator.CrossFadeInFixedTime(LocomotionBlendTreeHash, CrossFadeDuration);
 
@@ -28,6 +35,9 @@ public class PlayerUnbalancedState : PlayerBaseState
     }
     public override void Execute(float deltaTime)
     {
+        if (stateMachine.CalculateTilt() != Vector3.zero)
+            Time.timeScale = 1;
+
         if (stateMachine.IsUnbalanced.Count == 0)
         {
             stateMachine.ChangeState(new PlayerBalancedState(stateMachine));

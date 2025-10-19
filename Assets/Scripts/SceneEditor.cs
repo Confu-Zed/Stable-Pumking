@@ -26,4 +26,8 @@ public class SceneEditor : MonoBehaviour
     {
         Application.Quit();
     }
+    public void Credits()
+    {
+        SceneManager.LoadScene(6);
+    }
 }
