@@ -19,6 +19,9 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public GameObject TiltBar { get; private set; }
     [field: SerializeField] public GameObject BalancedText { get; private set; }
     [field: SerializeField] public GameObject UnbalancedText { get; private set; }
+    [field: SerializeField] public AudioClip Fall { get; private set; }
+    [field: SerializeField] public AudioClip Success { get; private set; }
+    public AudioSource Audio { get; private set; }
     public InputReader InputReader { get; private set; }
     public Animator Animator { get; private set; }
     public CharacterController Controller { get; private set; }
@@ -35,6 +38,7 @@ public class PlayerStateMachine : StateMachine
         Controller = GetComponent<CharacterController>();
         ForceReceiver = GetComponent<ForceReceiver>();
         MainCameraTransform = Camera.main.transform;
+        Audio = GetComponent<AudioSource>();
 
         ChangeState(new PlayerBalancedState(this));
     }

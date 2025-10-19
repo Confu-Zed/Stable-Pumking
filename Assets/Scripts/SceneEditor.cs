@@ -1,14 +1,17 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class SceneEditor : MonoBehaviour
 {
-    static int availableScene = 2;
+    static int availableScene = 3;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        LoadScene(1);
     }
     public void LoadScene(int sceneId)
     {
